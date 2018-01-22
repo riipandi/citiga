@@ -1,0 +1,28 @@
+{
+    "description": "Codeigniter3",
+    "name": "riipandi/Codeigniter3",
+    "type": "project",
+    "homepage": "https://aris.web.id",
+    "license": "MIT",
+    "config": {
+        "vendor-dir": "protected/vendor/"
+    },
+    "require": {
+        "php"                   : ">=5.6",
+        "codeigniter/framework" : "~3.1",
+        "byrokrat/checkdigit"   : "^1.1",
+        "crazycodr/roman"       : "^1.0",
+        "ramsey/uuid"           : "^3.3",
+        "box/spout"             : "^2.7",
+        "studio-42/elfinder"    : "^2.1",
+        "albertcht/invisible-recaptcha": "^1.8",
+        "delight-im/ids": "^1.0",
+        "delight-im/auth": "^7.2"
+    },
+    "suggest": {
+        "paragonie/random_compat": "Provides better randomness in PHP 5.x"
+    },
+    "require-dev": {
+        "mikey179/vfsStream": "1.1.*"
+    }
+}

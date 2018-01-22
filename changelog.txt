@@ -1,0 +1,17 @@
++ Bugs:
+  Update user jadi non-admin
+
+
+
++ Komponen:
+  CodeIgniter3
+  Carbon Admin
+  Font Awesome 5
+  Bootstrap 3
+  Bootstrap Datepicker
+  jQuery Vide
+  ToastrJs
+  DataTables
+  ChartJs
+  PopperJS
+  ElFinder
