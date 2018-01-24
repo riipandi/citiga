@@ -45,6 +45,7 @@ a { transition: background .3s; }
 /* HEADER */
 .login-form-header {
 	text-align: center;
+	margin-top: 10px;
 }
 
 .login-form-header img {
@@ -168,8 +169,8 @@ a { transition: background .3s; }
 	color: #8a8a8a;
 }
 .login-form-box .login-form-content {
+	margin: 0 0 10px;
 	padding: 0;
-	margin: 0;
 }
 /* SOCIAL MEDIA LOGIN */
 .socmed-login .socmed-btn {
@@ -177,7 +178,8 @@ a { transition: background .3s; }
     color: #FFFFFF;
     display: block;
     margin-top: 5px;
-    text-align: left;
+	text-align: left;
+	border-radius: 2px;
 }
 .socmed-login .socmed-btn i {
 	text-align: left;

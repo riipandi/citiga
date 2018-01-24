@@ -157,17 +157,20 @@ class Auth extends CI_Controller {
 					$this->ion_auth->set_error('forgot_password_email_not_found');
 				}
 				$this->session->set_flashdata('message', strip_tags($this->ion_auth->errors()));
-				redirect("lostpass", 'refresh');
+				//redirect("lostpass", 'refresh');
+				echo 'bad';
 			}
 
 			$forgotten = $this->ion_auth->forgotten_password($identity->{$this->config->item('identity', 'ion_auth')});
 
 			if ($forgotten) {
 				$this->session->set_flashdata('message', strip_tags($this->ion_auth->messages()));
-				redirect("login", 'refresh');
+				//redirect("login", 'refresh');
+				echo 'ok';
 			} else {
 				$this->session->set_flashdata('message', strip_tags($this->ion_auth->errors()));
-				redirect("lostpass", 'refresh');
+				//redirect("lostpass", 'refresh');
+				echo 'bad';
 			}
 		}
 	}

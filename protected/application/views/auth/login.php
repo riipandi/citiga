@@ -21,9 +21,9 @@
   <div class="rememberme-container">
     <input type="checkbox" name="rememberme" id="rememberme" />
     <label for="rememberme" class="rememberme">
-      <span>Biarkan tetap masuk</span>
+      <span>Ingatkan saya</span>
     </label>
-    <a class="forgot-password" href="#">Lupa Password?</a>
+    <!--a class="forgot-password" href="<?=site_url('lostpass')?>">Lupa Password?</a-->
   </div>
   <?=form_submit('submit', 'Log in', 'class="button" id="login-button"');?>
     <!--a href="#" class="register">Register</a-->
@@ -37,14 +37,10 @@
 <div class="socmed-login">
   <a href="#facebook" class="socmed-btn facebook-btn">
     <i class="fa fa-facebook"></i>
-    <span>Login dengan Facebook</span>
+    <span>Login dengan akun Facebook</span>
   <a>
   <a href="#g-plus" class="socmed-btn google-btn">
     <i class="fa fa-google"></i>
-    <span>Login dengan Google</span>
-  <a>
-  <a href="#g-plus" class="socmed-btn yahoo-btn">
-    <i class="fa fa-yahoo"></i>
-    <span>Login dengan Yahoo</span>
+    <span>Login dengan akun Google</span>
   <a>
 </div-->

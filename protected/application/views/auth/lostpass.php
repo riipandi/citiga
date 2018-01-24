@@ -1,23 +1,17 @@
-<div class="row justify-content-center">
-  <div class="col-md-5">
-      <div class="card p-4">
-        <?php echo form_open('lostpass', 'class="login-form" id="login-form"');?>
-        <div class="card-body py-5">
-            <div class="text-center font-weight-light" id="infoMessage"><?php echo $message;?></div>
-              <div class="form-group">
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fa fa-user"></i></span>
-                  </div>
-                  <input class="form-control" type="text" name="identity" id="identity" placeholder="<?php echo lang('login_identity_label');?>" autocomplete="off" autofocus required>
-                </div>
-              </div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-primary px-5">Reset Password</button>
-                <a href="<?=site_url('login');?>" class="btn btn-link float-right">Back to login</a>
-              </div>
-          </div>
-          <?php echo form_close();?>
-        </div>
-  </div>
+<div class="login-message">
+  <?=(!empty($message)) ? $message : '';?>
 </div>
+<script>var login_url = '<?=site_url('lostpass ')?>';</script>
+<?php echo form_open('lostpass', 'class="login-form" id="lostpass-form"');?>
+  <?php if (!empty($return_url)):?>
+  <input type="hidden" name="return_url" value="<?=$return_url?>" id="return_url" />
+  <?php endif;?>
+  <div class="input-container">
+    <i class="fa fa-user"></i>
+    <?=form_input('identity','','class="input" id="identity" placeholder="Username" autocomplete="off" autofocus');?>
+  </div>
+  <small class="validation" id="identity_validate"></small>
+  <?php if (!empty($captcha)) { echo '<div class="rememberme-container">'.$captcha->render().'</div>'; } ?>
+  <?=form_submit('submit', 'Submit', 'class="button" id="login-button"');?>
+    <a href="<?=site_url('login')?>" class="register">back to login</a>
+    <?=form_close();?>

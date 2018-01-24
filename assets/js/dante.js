@@ -122,6 +122,38 @@ $(document).ready(function () {
         return false;
     }
 
+    // Ajax Lostpass
+    // Ajax Login
+    $("#lostpass-form").validate({
+        rules: { identity: { required: true, email: false }, },
+        messages: { identity: 'Masukan Username Anda', },
+        errorPlacement: function (error, element) {
+            var name = $(element).attr('name');
+            error.appendTo($('#' + name + '_validate'));
+        },
+        submitHandler: validateLostpass
+    });
+
+    function validateLostpass() {
+        var data = $('#lostpass-form').serialize();
+        $.ajax({
+            type: 'POST',
+            url: login_url,
+            data: data,
+            beforeSend: function () { $('#login-button').val('Memvalidasi ...'); },
+            success: function (response) {
+                if (response == "ok") {
+                    $('#login-button').val('Pengguna ditemukan, tunggu sebentar ...');
+                    setTimeout('window.location.href = "login";', 2000);
+                } else {
+                    $('#login-button').val('Submit');
+                    location.reload();
+                }
+            }
+        });
+        return false;
+    }
+    
     /* DataTable
     $('#table-data').DataTable({
         lengthMenu: [[10, 50, 100, 500], [10, 50, 100, 500]],

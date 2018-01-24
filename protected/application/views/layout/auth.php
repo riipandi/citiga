@@ -25,7 +25,7 @@
 		<div class="login-form-box">
 			<div class="login-form-header">
 				<div class="logo"><img src="<?=site_url('assets/img/ef-logo.png');?>"/></div>
-				<h3>Login ke akun Anda</h3>
+				<h3><?=$title?></h3>
 			</div>
 			<div class="login-form-content">
 				<?=$output?>
