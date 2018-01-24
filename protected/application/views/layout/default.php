@@ -60,11 +60,13 @@
 			<div class="sidebar">
 				<nav class="sidebar-nav">
 					<ul class="nav">
-						<li class="nav-title">Menu Navigasi</li>
+						<li class="nav-title mt-2">Menu Navigasi</li>
 						<li class="nav-item">
-							<a href="<?=site_url('dashboard');?>" class="nav-link"><i class="fa fa-home"></i> Dashboard</a>
+							<a href="<?=site_url('dashboard');?>" class="nav-link nav-dropdown-toggle"><i class="fa fa-home"></i> Dashboard <i class="fa fa-caret-right"></i></a>
 						</li>
 						
+						<?php //include dirname(__FILE__).'/sidenav.php'; ?>
+
 						<li class="nav-item nav-dropdown">
 							<a href="#" class="nav-link nav-dropdown-toggle"><i class="fa fa-cogs"></i> Pengaturan <i class="fa fa-caret-right"></i></a>
 							<ul class="nav-dropdown-items">
@@ -74,7 +76,7 @@
 							</ul>
 						</li>
 						
-						<li class="nav-title">Bantuan</li>
+						<li class="nav-title mt-4">Bantuan</li>
 						<li class="nav-item"><a href="#" class="nav-link sorry"><i class="fa fa-life-ring"></i> Panduan Penggunaan</a></li>
 						<li class="nav-item"><a href="#" class="nav-link sorry"><i class="fa fa-paper-plane"></i> Hubungi Pengembang</a></li>
 					</ul>

@@ -3,11 +3,6 @@
 define('APP_NAME',    'ArCi3');
 define('APP_VERSION', '1.0');
 
-define('SESSNAME', strtolower(str_replace(' ','', APP_NAME)));
-define('TMP_PATH', FCPATH . 'temp' . DIRECTORY_SEPARATOR);
-
-date_default_timezone_set(TIMEZONE);
-
 switch (ENVIRONMENT) {
     case 'development':
         error_reporting(-1);
@@ -109,5 +104,10 @@ if (!isset($view_folder[0]) && is_dir(APPPATH . 'views' . DIRECTORY_SEPARATOR)) 
 }
 
 define('VIEWPATH', $view_folder . DIRECTORY_SEPARATOR);
+
+// by Aris Ripandi
+define('SESSNAME', strtolower(str_replace(' ','', APP_NAME)));
+define('TMP_PATH', FCPATH . DIRECTORY_SEPARATOR . 'temp' . DIRECTORY_SEPARATOR);
+date_default_timezone_set(TIMEZONE);
 
 require_once BASEPATH . 'core/CodeIgniter.php';
