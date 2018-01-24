@@ -66,27 +66,17 @@
 						</li>
 						
 						<li class="nav-item nav-dropdown">
-							<a href="#" class="nav-link nav-dropdown-toggle"><i class="fa fa-cogs"></i> Pengaturan <i class="fa fa-caret-down"></i></a>
+							<a href="#" class="nav-link nav-dropdown-toggle"><i class="fa fa-cogs"></i> Pengaturan <i class="fa fa-caret-right"></i></a>
 							<ul class="nav-dropdown-items">
-								<li class="nav-item">
-									<a href="<?=site_url('users');?>" class="nav-link"><i class="fa fa-arrow-right"></i> Pengguna</a>
-								</li>
-								<li class="nav-item">
-									<a href="<?=site_url('options');?>" class="nav-link"><i class="fa fa-arrow-right"></i> Pengaturan Umum</a>
-								</li>
-								<li class="nav-item">
-									<a href="<?=site_url('backup');?>" class="nav-link"><i class="fa fa-arrow-right"></i> Backup Restore Data</a>
-								</li>
+								<li class="nav-item"><a href="<?=site_url('users');?>" class="nav-link"><i class="fa fa-arrow-right"></i> Pengguna</a></li>
+								<li class="nav-item"><a href="<?=site_url('options');?>" class="nav-link"><i class="fa fa-arrow-right"></i> Pengaturan Umum</a></li>
+								<li class="nav-item"><a href="<?=site_url('backup');?>" class="nav-link"><i class="fa fa-arrow-right"></i> Backup Restore Data</a></li>
 							</ul>
 						</li>
-
+						
 						<li class="nav-title">Bantuan</li>
-						<li class="nav-item">
-							<a href="#" class="nav-link sorry"><i class="fa fa-life-ring"></i> Panduan Penggunaan</a>
-						</li>
-						<li class="nav-item">
-							<a href="#" class="nav-link sorry"><i class="fa fa-paper-plane"></i> Hubungi Pengembang</a>
-						</li>
+						<li class="nav-item"><a href="#" class="nav-link sorry"><i class="fa fa-life-ring"></i> Panduan Penggunaan</a></li>
+						<li class="nav-item"><a href="#" class="nav-link sorry"><i class="fa fa-paper-plane"></i> Hubungi Pengembang</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -100,7 +90,7 @@
 		</div>
 		<!--// Main Container -->
 		<footer class="main-footer small dfn">
-			Loaded in {elapsed_time} seconds. <?=ucfirst(APP_NAME.' v'.APP_VERSION)?>
+			Loaded in {elapsed_time} seconds. <?=APP_NAME.' v'.APP_VERSION?>
 		</footer>
 	</div>
 	<!--// Page Wrapper -->

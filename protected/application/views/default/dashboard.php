@@ -22,23 +22,18 @@
 
 					<div class="justify-content-around mt-4 p-4 bg-light d-flex border-top d-md-down-none">
 						<div class="text-center">
-							<div class="text-muted small">Total Pengguna</div>
-							<div><?=$this->dante_model->count_row('users')?> Pengguna</div>
+							<div class="text-muted small">Total Users</div>
+							<div><?=$this->dante_model->count_row('users')?> users</div>
 						</div>
 
 						<div class="text-center">
-							<div class="text-muted small">Total Penerimaan</div>
-							<div><?=$this->dante_model->count_row('t_penerimaan')?> Transaksi</div>
+							<div class="text-muted small">Total Group</div>
+							<div><?=$this->dante_model->count_row('groups')?> group</div>													
 						</div>
-
+						
 						<div class="text-center">
-							<div class="text-muted small">Total Pengeluaran</div>
-							<div><?=$this->dante_model->count_row('t_transaksi')?> Transaksi</div>
-						</div>
-
-						<div class="text-center">
-							<div class="text-muted small">Total Produk</div>
-							<div><?=$this->dante_model->count_row('t_obat')?> Produk</div>													
+							<div class="text-muted small">Login Attempt</div>
+							<div><?=$this->dante_model->count_row('login_attempts')?> records</div>
 						</div>
 					</div>
 				</div>

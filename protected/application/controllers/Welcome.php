@@ -60,7 +60,7 @@ class Welcome extends CI_Controller {
 		// Render the view
 		$this->load->js('assets/js/demo.js');
 		$this->output->set_title($this->data['title']);
-		$this->load->view('default/dashboard1', $this->data);
+		$this->load->view('default/dashboard', $this->data);
 	}
 
 } // EndClass

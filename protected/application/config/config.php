@@ -107,7 +107,7 @@ $config['encryption_key'] = '9dcfad793878046bcd6ae50c7e7ec0fb';
 */
 $config['sess_driver']              = 'files';
 $config['sess_save_path']           = $config['log_path'];
-$config['sess_cookie_name']         = 'cxsessions';
+$config['sess_cookie_name']         = strtolower(str_replace(' ','', APP_NAME));
 $config['sess_expiration']          = 7200;
 $config['sess_time_to_update']      = 300;
 $config['sess_match_ip']            = TRUE;

@@ -1,7 +1,7 @@
 <?php defined('ENVIRONMENT') OR exit('No direct script access allowed');
 
 define('APP_NAME',    'ArCi3');
-define('APP_VERSION', '2.0');
+define('APP_VERSION', '1.0');
 
 date_default_timezone_set(TIMEZONE);
 
