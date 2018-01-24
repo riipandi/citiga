@@ -16,6 +16,7 @@ application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
 /vendor/
+
+/protected/config.inc.php
 /protected/temp/*
 /protected/vendor/
-/protected/config.inc.php

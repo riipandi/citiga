@@ -3,11 +3,11 @@
 /**
  * Database Connection
 */
-define('DB_PORT', '3306');
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'dante');
-define('DB_USER', 'root');
-define('DB_PASS', '123321');
+define('DB_PORT', 'database_port');
+define('DB_HOST', 'database_host');
+define('DB_NAME', 'database_name');
+define('DB_USER', 'database_user');
+define('DB_PASS', 'database_pass');
 
 /**
  * SMTP Configuration
@@ -21,8 +21,8 @@ define('DB_PASS', '123321');
  * Register keys at:
  * https://www.google.com/recaptcha/admin
 */
-define('RECAPTCHA_SITEKEY',   '6Lf07SQUAAAAAC54ghk7T6iUhj32SvcXvn3o-zPN');
-define('RECAPTCHA_SECRETKEY', '6Lf07SQUAAAAAAeI_lgN65QqkZU3rse2OvHpwlma');
+define('RECAPTCHA_SITEKEY',   '');
+define('RECAPTCHA_SECRETKEY', '');
 
 /**
  * System Configuration
