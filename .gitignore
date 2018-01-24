@@ -18,3 +18,4 @@ application/logs/*
 /vendor/
 /protected/temp/*
 /protected/vendor/
+/protected/config.inc.php
