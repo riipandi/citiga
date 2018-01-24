@@ -76,7 +76,7 @@ $config['log_threshold']        = 0;
 $config['log_file_extension']   = 'php';
 $config['log_file_permissions'] = 0644;
 $config['log_date_format']      = 'Y-m-d H:i:s';
-$config['log_path']             = FCPATH . 'temp' . DIRECTORY_SEPARATOR;
+$config['log_path']             = TMP_PATH;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,7 +85,7 @@ $config['log_path']             = FCPATH . 'temp' . DIRECTORY_SEPARATOR;
 |
 */
 $config['error_views_path']     = APPPATH . 'errors' . DIRECTORY_SEPARATOR;
-$config['cache_path']           = $config['log_path'];
+$config['cache_path']           = TMP_PATH;
 
 /*
 |--------------------------------------------------------------------------
@@ -106,8 +106,8 @@ $config['encryption_key'] = '9dcfad793878046bcd6ae50c7e7ec0fb';
 |--------------------------------------------------------------------------
 */
 $config['sess_driver']              = 'files';
-$config['sess_save_path']           = $config['log_path'];
-$config['sess_cookie_name']         = strtolower(str_replace(' ','', APP_NAME));
+$config['sess_save_path']           = TMP_PATH;
+$config['sess_cookie_name']         = SESSNAME.'_sess';
 $config['sess_expiration']          = 7200;
 $config['sess_time_to_update']      = 300;
 $config['sess_match_ip']            = TRUE;
@@ -123,9 +123,6 @@ $config['sess_regenerate_destroy']  = TRUE;
 | 'cookie_path'     = Typically will be a forward slash
 | 'cookie_secure'   = Cookie will only be set if a secure HTTPS connection exists.
 | 'cookie_httponly' = Cookie will only be accessible via HTTP(S) (no javascript)
-|
-| Note: These settings (with the exception of 'cookie_prefix' and
-|       'cookie_httponly') will also affect sessions.
 |
 */
 $config['cookie_prefix']	= '';
@@ -147,8 +144,8 @@ $config['cookie_httponly'] 	= FALSE;
 */
 $config['csrf_protection']   = TRUE;
 $config['csrf_regenerate']   = TRUE;
-$config['csrf_token_name']   = 'csrftoken';
-$config['csrf_cookie_name']  = 'cxcookies';
+$config['csrf_token_name']   = SESSNAME.'_csrf';
+$config['csrf_cookie_name']  = SESSNAME.'_kies';
 $config['csrf_expire']       = 7200;
 $config['csrf_exclude_uris'] = array();
 

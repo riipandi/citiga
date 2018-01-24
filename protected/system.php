@@ -3,6 +3,9 @@
 define('APP_NAME',    'ArCi3');
 define('APP_VERSION', '1.0');
 
+define('SESSNAME', strtolower(str_replace(' ','', APP_NAME)));
+define('TMP_PATH', FCPATH . 'temp' . DIRECTORY_SEPARATOR);
+
 date_default_timezone_set(TIMEZONE);
 
 switch (ENVIRONMENT) {
