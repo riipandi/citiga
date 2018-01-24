@@ -15,14 +15,13 @@
 	?>
 	<link rel="shortcut icon" href="<?=site_url('assets/img/favicon.ico');?>" type="image/x-icon">
 	<link rel="stylesheet" href="<?=site_url('assets/css/fontawesome-all.min.css');?>">
-	<link rel="stylesheet" href="<?=site_url('assets/css/toastr.min.css');?>">
     <link rel="stylesheet" href="<?=site_url('assets/css/fontface.css');?>">
     <link rel="stylesheet" href="<?=site_url('assets/css/login.css');?>">
 </head>
 <body>
 	<div class="background"></div>
 	<div class="backdrop backdrop-dotted"></div>
-	<div class="login-form-container no-social" id="login-form">
+	<div class="login-form-container">
 		<div class="login-form-box">
 			<div class="login-form-header">
 				<div class="logo"><img src="<?=site_url('assets/img/ef-logo.png');?>"/></div>
@@ -36,7 +35,6 @@
 	<!-- Javascript Libraries -->
 	<script src="<?=site_url('assets/js/jquery.min.js');?>"></script>
 	<script src="<?=site_url('assets/js/jquery.validate.min.js');?>"></script>
-	<script src="<?=site_url('assets/js/toastr.min.js');?>"></script>
 	<?php foreach($js as $file){ echo "\n\t\t<script src='$file'></script>"; } ?>
 	<script src="<?=site_url('assets/js/dante.js');?>"></script>
 

@@ -1,3 +1,4 @@
+/*
 toastr.options = {
     "closeButton": false,
     "debug": false,
@@ -15,6 +16,7 @@ toastr.options = {
     "showMethod": "fadeIn",
     "hideMethod": "fadeOut"
 }
+*/
 
 $(function() {
     $(document).bind("fullscreenchange", function(e) {
@@ -79,7 +81,7 @@ $(document).ready(function () {
     })
 
     // Ajax Login
-    $('#login-form').validate({
+    $("#login-form").validate({
         rules: {
             password: {required: true},
             identity: {required: true, email: false},
@@ -89,8 +91,8 @@ $(document).ready(function () {
             identity: 'Masukan Username Anda',
         },
         errorPlacement: function (error, element) {
-            var name = $(element).attr("name");
-            error.appendTo($("#" + name + "_validate"));
+            var name = $(element).attr('name');
+            error.appendTo($('#' + name + '_validate'));
         },
         submitHandler: validateLogin
     });
@@ -101,18 +103,18 @@ $(document).ready(function () {
             type: 'POST',
             url: login_url,
             data: data,
-            beforeSend: function () {$("#login-button").val('Memvalidasi ...');},
+            beforeSend: function () {$('#login-button').val('Memvalidasi ...');},
             success: function (response) {
                 if (response == "ok") {
                     var return_url = $('#return_url').val();
-                    $("#login-button").val('Login berhasil, tunggu sebentar ...');
+                    $('#login-button').val('Login berhasil, tunggu sebentar ...');
                     if (return_url) {
                         setTimeout('window.location.href = "' + return_url + '";', 2000);
                     } else {
                         setTimeout('window.location.href = "dashboard";', 2000);
                     }
                 } else {
-                    $("#login-button").val('Log in');
+                    $('#login-button').val('Log in');
                     location.reload();
                 }
             }

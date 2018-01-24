@@ -8,12 +8,12 @@
   <?php endif;?>
   <div class="input-container">
     <i class="fa fa-user"></i>
-    <?=form_input('identity','','class="input" id="identity" placeholder="Username" autocomplete="off" autofocus required');?>
+    <?=form_input('identity','','class="input" id="identity" placeholder="Username" autocomplete="off" autofocus');?>
   </div>
   <small class="validation" id="identity_validate"></small>
   <div class="input-container">
     <i class="fa fa-key"></i>
-    <?=form_password('password','','class="input" id="password" placeholder="Password" autocomplete="off" required');?>
+    <?=form_password('password','','class="input" id="password" placeholder="Password" autocomplete="off"');?>
     <i id="show-password" class="fa fa-eye"></i>
   </div>
   <small class="validation" id="password_validate"></small>
