@@ -23,22 +23,22 @@
 					<div class="justify-content-around mt-4 p-4 bg-light d-flex border-top d-md-down-none">
 						<div class="text-center">
 							<div class="text-muted small">Total Pengguna</div>
-							<div><?=$this->arci_model->count_row('users')?> Pengguna</div>
+							<div><?=$this->dante_model->count_row('users')?> Pengguna</div>
 						</div>
 
 						<div class="text-center">
 							<div class="text-muted small">Total Penerimaan</div>
-							<div><?=$this->arci_model->count_row('t_penerimaan')?> Transaksi</div>
+							<div><?=$this->dante_model->count_row('t_penerimaan')?> Transaksi</div>
 						</div>
 
 						<div class="text-center">
 							<div class="text-muted small">Total Pengeluaran</div>
-							<div><?=$this->arci_model->count_row('t_transaksi')?> Transaksi</div>
+							<div><?=$this->dante_model->count_row('t_transaksi')?> Transaksi</div>
 						</div>
 
 						<div class="text-center">
 							<div class="text-muted small">Total Produk</div>
-							<div><?=$this->arci_model->count_row('t_obat')?> Produk</div>													
+							<div><?=$this->dante_model->count_row('t_obat')?> Produk</div>													
 						</div>
 					</div>
 				</div>

@@ -6,7 +6,7 @@ class MY_Exceptions extends CI_Exceptions
 	function show_error($heading, $message, $template = 'error_general', $status_code = 500)
 	{		
 		if((!isset($template)) || ($template == 'error_general')){
-			if(file_exists(APPPATH.'views/default/errorpage.php')) {
+			if(file_exists(APPPATH.'views/layout/errorpage.php')) {
 				$template = 'errorpage';
 			}
 		}
@@ -23,7 +23,7 @@ class MY_Exceptions extends CI_Exceptions
 		}
 		ob_start();
 		
-		include(APPPATH.'views/default/errorpage.php');
+		include(APPPATH.'views/layout/errorpage.php');
 		$buffer = ob_get_contents();
 		ob_end_clean();
 		return $buffer;

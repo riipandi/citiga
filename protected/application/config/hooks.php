@@ -12,16 +12,16 @@
 */
 
 $hook['pre_system'][] = array(
-  'class'    => 'arcihooks',
+  'class'    => 'dantehooks',
   'function' => 'maintenance_mode',
-  'filename' => 'arcihooks.php',
+  'filename' => 'dantehooks.php',
   'filepath' => 'hooks'
 );
 
 // Compress output
 $hook['display_override'][] = array(
-	'class'    => 'arcihooks',
+	'class'    => 'dantehooks',
 	'function' => 'minify_output',
-	'filename' => 'arcihooks.php',
+	'filename' => 'dantehooks.php',
 	'filepath' => 'hooks'
 );

@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-if(! function_exists('arci_helper'))
+if(! function_exists('dante_helper'))
 {
     function json_output($statusHeader,$response)
 	{

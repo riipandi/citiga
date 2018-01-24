@@ -12,7 +12,7 @@ class Backup extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->library(['ion_auth']);
-		$this->load->helper(['download', 'directory', 'arci']);
+		$this->load->helper(['download', 'directory', 'dante']);
 		$this->load->dbutil();
 		$this->_init();
     }

@@ -26,7 +26,7 @@ $(function() {
        toastr.warning("Browser won't enter full screen mode for some reason.");
     });
 });
-    
+
 $(document).ready(function () {
 
     // Fitur Belum Tersedia
@@ -65,19 +65,24 @@ $(document).ready(function () {
         $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
     });
 
-    /* DataTable
-    $('#table-data').DataTable({
-        lengthMenu: [[10, 50, 100, 500], [10, 50, 100, 500]],
-        language: {searchPlaceholder: "Cari data / record ..."},
-        autoWidth: !1, responsive: !0, dom: 'Blfrtip', ordering: false,
-    });
-    */
+    // Show Password
+    $('#show-password').click(function () {
+        if ($(this).hasClass('fa-eye')) {
+            $('#password').attr('type', 'text');
+            $(this).removeClass('fa-eye');
+            $(this).addClass('fa-eye-slash');
+        } else {
+            $('#password').attr('type', 'password');
+            $(this).removeClass('fa-eye-slash');
+            $(this).addClass('fa-eye');
+        }
+    })
 
     // Ajax Login
-    $("#login-form").validate({
+    $('#login-form').validate({
         rules: {
-            password: { required: true},
-            identity: { required: true, email: false },
+            password: {required: true},
+            identity: {required: true, email: false},
         },
         messages: {
             password: 'Masukan Password Anda',
@@ -88,33 +93,40 @@ $(document).ready(function () {
             error.appendTo($("#" + name + "_validate"));
         },
         submitHandler: validateLogin
-    });  
+    });
 
-    function validateLogin() {		
-        var data = $("#login-form").serialize();
+    function validateLogin() {
+        var data = $('#login-form').serialize();
         $.ajax({
-            type: 'POST', url: login_url, data: data,
-            beforeSend: function() { $("#login-button").val('Memvalidasi ...'); },
-            success :  function(response) {
-                if(response=="ok"){
+            type: 'POST',
+            url: login_url,
+            data: data,
+            beforeSend: function () {$("#login-button").val('Memvalidasi ...');},
+            success: function (response) {
+                if (response == "ok") {
                     var return_url = $('#return_url').val();
                     $("#login-button").val('Login berhasil, tunggu sebentar ...');
                     if (return_url) {
-                        setTimeout('window.location.href = "'+return_url+'";',2000);
+                        setTimeout('window.location.href = "' + return_url + '";', 2000);
                     } else {
-                        setTimeout('window.location.href = "dashboard";',2000);
+                        setTimeout('window.location.href = "dashboard";', 2000);
                     }
-                } else{
+                } else {
                     $("#login-button").val('Log in');
-                    toastr.warning('Login gagal!');
                     location.reload();
                 }
             }
         });
         return false;
     }
-    
-    /*
+
+    /* DataTable
+    $('#table-data').DataTable({
+        lengthMenu: [[10, 50, 100, 500], [10, 50, 100, 500]],
+        language: {searchPlaceholder: "Cari data / record ..."},
+        autoWidth: !1, responsive: !0, dom: 'Blfrtip', ordering: false,
+    });
+
     function reload_table() { $('#table-data').DataTable().ajax.reload(); }
     table = $('#table-data').DataTable({
         lengthMenu: [[10, 50, 100, 500], [10, 50, 100, 500]],

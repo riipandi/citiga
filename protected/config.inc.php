@@ -5,7 +5,7 @@
 */
 define('DB_PORT', '3306');
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'efarmasi');
+define('DB_NAME', 'dante');
 define('DB_USER', 'root');
 define('DB_PASS', '123321');
 

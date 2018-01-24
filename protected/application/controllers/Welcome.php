@@ -55,7 +55,7 @@ class Welcome extends CI_Controller {
 		$this->data['user'] = $this->ion_auth->user()->row();
 
 		// Count records
-		$this->load->model('arci_model');
+		$this->load->model('dante_model');
 		
 		// Render the view
 		$this->load->js('assets/js/demo.js');
