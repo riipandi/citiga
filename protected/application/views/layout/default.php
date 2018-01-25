@@ -13,7 +13,7 @@
 		if(!empty($canonical)) { echo "\n\t\t<link rel='canonical' href='$canonical'>"; }
 		foreach($css as $file) { echo "\n\t\t<link href='$file' rel='stylesheet' type='text/css'>"; }
 	?>
-	<link rel="shortcut icon" href="<?=site_url('assets/img/favicon.ico');?>" type="image/x-icon">
+	<link rel="shortcut icon" href="<?=site_url('assets/img/'.SESSNAME.'.png');?>" type="image/x-icon">
 	<link rel="stylesheet" href="<?=site_url('assets/css/fontawesome-all.min.css');?>">
 	<link rel="stylesheet" href="<?=site_url('assets/css/toastr.min.css');?>">
     <link rel="stylesheet" href="<?=site_url('assets/css/styles.css');?>">
@@ -24,9 +24,9 @@
 	<div class="page-wrapper">
 		<!-- Header Nav -->
 		<nav class="navbar page-header">
-			<a href="#" class="btn btn-link sidebar-toggle d-md-down-none"><i class="fa fa-bars"></i></a>
+ 			<a href="#" class="btn btn-link sidebar-toggle d-md-down-none"><i class="fa fa-bars"></i></a>
 			<a href="#" class="btn btn-link sidebar-mobile-toggle d-md-none mr-auto"><i class="fa fa-bars"></i></a>
-			<span class="navbar-brand"><img src="<?=site_url('assets/img/logo.png');?>" alt="logo"></span>
+			<span class="navbar-brand"><img src="<?=site_url('assets/img/'.SESSNAME.'.png');?>" class="avatar avatar-xs" alt="<?=APP_NAME?>"></span>
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item d-md-down-none">
 					<a onclick="$(document).toggleFullScreen()" id="fullscreen" title="Toggle Fullscreen" class="cursor-pointer"><i class="fa fa-tv" ></i></span></a>
@@ -65,7 +65,11 @@
 							<a href="<?=site_url('dashboard');?>" class="nav-link nav-dropdown-toggle"><i class="fa fa-home"></i> Dashboard <i class="fa fa-caret-right"></i></a>
 						</li>
 						
-						<?php //include dirname(__FILE__).'/sidenav.php'; ?>
+						<?php 
+							if (file_exists(dirname(__FILE__).'/sidenav.php')) {
+								include dirname(__FILE__).'/sidenav.php';
+							}
+						?>
 
 						<li class="nav-item nav-dropdown">
 							<a href="#" class="nav-link nav-dropdown-toggle"><i class="fa fa-cogs"></i> Pengaturan <i class="fa fa-caret-right"></i></a>

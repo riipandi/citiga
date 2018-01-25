@@ -13,7 +13,7 @@
 		if(!empty($canonical)) { echo "\n\t\t<link rel='canonical' href='$canonical'>"; }
 		foreach($css as $file) { echo "\n\t\t<link href='$file' rel='stylesheet' type='text/css'>"; }
 	?>
-	<link rel="shortcut icon" href="<?=site_url('assets/img/favicon.ico');?>" type="image/x-icon">
+	<link rel="shortcut icon" href="<?=site_url('assets/img/'.SESSNAME.'.png');?>" type="image/x-icon">
 	<link rel="stylesheet" href="<?=site_url('assets/css/fontawesome-all.min.css');?>">
     <link rel="stylesheet" href="<?=site_url('assets/css/fontface.css');?>">
     <link rel="stylesheet" href="<?=site_url('assets/css/login.css');?>">
@@ -24,7 +24,7 @@
 	<div class="login-form-container">
 		<div class="login-form-box">
 			<div class="login-form-header">
-				<div class="logo"><img src="<?=site_url('assets/img/ef-logo.png');?>"/></div>
+				<div class="logo"><img src="<?=site_url('assets/img/'.SESSNAME.'.png');?>"/></div>
 				<h3><?=$title?></h3>
 			</div>
 			<div class="login-form-content">
