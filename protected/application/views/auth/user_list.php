@@ -5,8 +5,8 @@
 				<div class="card-header bg-light">
                     <span><?=$title?></span>
                     <div class="card-actions">
-                        <a onclick="#" data-toggle="modal" data-target="#modal-add-user" class="btn"><i class="fa fa-lg fa-plus"></i> Tambah</a>
-                        <a onclick="location.reload()" class="btn"><i class="fa fa-lg fa-retweet"></i> Refresh</a>
+                        <a onclick="#" data-toggle="modal" data-target="#modal-add-user" class="btn"><i class="icon ion-plus"></i> Tambah</a>
+                        <a onclick="location.reload()" class="btn"><i class="icon ion-refresh"></i> Refresh</a>
                     </div>
 				</div>
 				<div class="card-body">
@@ -61,7 +61,7 @@
 			<div class="card">
 				<div class="card-header bg-light">User Group</div>
                 <div class="card-actions">
-                    <a onclick="#" data-toggle="modal" data-target="#modal-add-group" class="btn"><i class="fa fa-lg fa-plus"></i> Buat Grup</a>
+                    <a onclick="#" data-toggle="modal" data-target="#modal-add-group" class="btn"><i class="icon ion-plus"></i> Buat Grup</a>
                 </div>
 				<div class="card-body">
                     <div class="table-responsive">
@@ -82,9 +82,9 @@
                                     <td class="text-nowrap"><?=htmlspecialchars(ucfirst($group['description']),ENT_QUOTES,'UTF-8')?></td>
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Actio Group">
-                                            <button title="Edit" type="button" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></button>
-                                            <button title="Aktifkan" type="button" class="btn btn-sm btn-success"><i class="fa fa-check"></i></button>
-                                            <button title="Hapus" type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                            <button title="Edit" type="button" class="btn btn-sm btn-primary"><i class="icon ion-edit"></i></button>
+                                            <button title="Aktifkan" type="button" class="btn btn-sm btn-success"><i class="icon ion-checkmark-round"></i></button>
+                                            <button title="Hapus" type="button" class="btn btn-sm btn-danger"><i class="icon ion-trash-a"></i></button>
                                         </div>
                                     </td>
                                 </tr>
@@ -187,10 +187,10 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" id="btnSave" class="btn btn-primary">
-                        <i class="fa fa-save"></i> &nbsp; Save
+                        <i class="icon ion-android-done-all"></i> &nbsp; Save
                     </button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">
-                        <i class="fa fa-times"></i> &nbsp; Cancel
+                        <i class="icon ion-arrow-return-left"></i> &nbsp; Cancel
                     </button>
                 </div>
             <?=form_close();?>
@@ -222,10 +222,10 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" id="btnSave" class="btn btn-primary">
-                        <i class="fa fa-save"></i> &nbsp; Save
+                        <i class="icon ion-save"></i> &nbsp; Save
                     </button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">
-                        <i class="fa fa-times"></i> &nbsp; Cancel
+                        <i class="icon ion-times"></i> &nbsp; Cancel
                     </button>
                 </div>
             <?=form_close();?>

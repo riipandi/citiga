@@ -68,12 +68,16 @@ a { transition: background .3s; }
 }
 
 /* FROM INPUT */
+.login-form .input-container .icon { 
+	margin-right: 10px;
+}
+
 .login-form .input-container {
 	border-bottom: 1px solid #CCCCCC;
     margin-top: 15px;
     font-size: 20px;
     color: #9e9e9e;
-	padding-bottom: 5px;
+	padding: 0 0 5px 5px;
 }
 .login-form .input {
 	border: 0;

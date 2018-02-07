@@ -7,14 +7,14 @@
   <input type="hidden" name="return_url" value="<?=$return_url?>" id="return_url" />
   <?php endif;?>
   <div class="input-container">
-    <i class="fa fa-user"></i>
+    <i class="icon ion-person"></i>
     <?=form_input('identity','','class="input" id="identity" placeholder="Username" autocomplete="off" autofocus');?>
   </div>
   <small class="validation" id="identity_validate"></small>
   <div class="input-container">
-    <i class="fa fa-key"></i>
+    <i class="icon ion-lock-combination"></i>
     <?=form_password('password','','class="input" id="password" placeholder="Password" autocomplete="off"');?>
-    <i id="show-password" class="fa fa-eye"></i>
+    <i id="show-password" class="icon ion-eye"></i>
   </div>
   <small class="validation" id="password_validate"></small>
   <?php if (!empty($captcha)) { echo '<div class="rememberme-container">'.$captcha->render().'</div>'; } ?>
@@ -36,11 +36,11 @@
 </div>
 <div class="socmed-login">
   <a href="#facebook" class="socmed-btn facebook-btn">
-    <i class="fa fa-facebook"></i>
+    <i class="icon ion-facebook"></i>
     <span>Login dengan akun Facebook</span>
   <a>
   <a href="#g-plus" class="socmed-btn google-btn">
-    <i class="fa fa-google"></i>
+    <i class="icon ion-google"></i>
     <span>Login dengan akun Google</span>
   <a>
 </div-->

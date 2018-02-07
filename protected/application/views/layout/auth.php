@@ -14,7 +14,7 @@
 		foreach($css as $file) { echo "\n\t\t<link href='$file' rel='stylesheet' type='text/css'>"; }
 	?>
 	<link rel="icon" type="image/png" href="<?=site_url('assets/img/'.SESSNAME.'.png');?>">
-	<link rel="stylesheet" href="<?=site_url('assets/css/fontawesome-all.min.css');?>">
+	<link rel="stylesheet" href="<?=site_url('assets/css/ionicons.min.css');?>">
     <link rel="stylesheet" href="<?=site_url('assets/css/fontface.css');?>">
     <link rel="stylesheet" href="<?=site_url('assets/css/login.css');?>">
 </head>

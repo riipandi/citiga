@@ -19,7 +19,7 @@
 							</div>
 							<div class="col-md-4 mt-0">
 								<div class="input-group">
-									<button type="submit" class="btn btn-danger btn-block"><i class="fa fa-database"></i> Restore</button>
+									<button type="submit" class="btn btn-danger btn-block"><i class="icon ion-filing"></i> Restore</button>
 								</div>
 							</div>
 						</div>
@@ -28,7 +28,7 @@
 						<div class="col-md-12">
 							<div class="input-group">
 								<a href="<?=site_url('backup/doBackup');?>" class="btn btn-primary btn-block float-right">
-									<i class="fa fa-align-center"></i> &nbsp; Backup Data
+									<i class="icon ion-briefcase"></i> &nbsp; Backup Data
 								</a>
 							</div>
 						</div>
@@ -60,7 +60,7 @@
 				<div class="card-header bg-light">Backup files
 					<?php if (!empty($backup_files)): ?>
 						<span class="float-right">
-							<a href="#" data-href="<?=site_url('backup/delete_all');?>" data-toggle="modal" data-target="#confirm-get">Delete all</a>
+							<a href="#" data-href="<?=site_url('backup/delete_all');?>" data-toggle="modal" data-target="#confirm-get"><i class="icon ion-trash-a"></i> Delete all</a>
 						</span>
 					<?php endif; ?>
 				</div>

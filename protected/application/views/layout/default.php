@@ -14,7 +14,7 @@
 		foreach($css as $file) { echo "\n\t\t<link href='$file' rel='stylesheet' type='text/css'>"; }
 	?>
 	<link rel="icon" type="image/png" href="<?=site_url('assets/img/'.SESSNAME.'.png');?>">
-	<link rel="stylesheet" href="<?=site_url('assets/css/fontawesome-all.min.css');?>">
+	<link rel="stylesheet" href="<?=site_url('assets/css/ionicons.min.css');?>">
 	<link rel="stylesheet" href="<?=site_url('assets/css/toastr.min.css');?>">
     <link rel="stylesheet" href="<?=site_url('assets/css/styles.css');?>">
 </head>
@@ -24,12 +24,12 @@
 	<div class="page-wrapper">
 		<!-- Header Nav -->
 		<nav class="navbar page-header">
- 			<a href="#" class="btn btn-link sidebar-toggle d-md-down-none"><i class="fa fa-bars"></i></a>
-			<a href="#" class="btn btn-link sidebar-mobile-toggle d-md-none mr-auto"><i class="fa fa-bars"></i></a>
-			<span class="navbar-brand"><img src="<?=site_url('assets/img/'.SESSNAME.'.png');?>" class="avatar avatar-xs" alt="<?=APP_NAME?>"></span>
+ 			<a href="#" class="btn btn-link sidebar-toggle d-md-down-none"><i class="icon ion-navicon-round"></i></a>
+			<a href="#" class="btn btn-link sidebar-mobile-toggle d-md-none mr-auto"><i class="icon ion-navicon-round"></i></a>
+			<!--span class="navbar-brand"><img src="<?=site_url('assets/img/'.SESSNAME.'.png');?>" class="avatar avatar-xs" alt="<?=APP_NAME?>"></span-->
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item d-md-down-none">
-					<a onclick="$(document).toggleFullScreen()" id="fullscreen" title="Toggle Fullscreen" class="cursor-pointer"><i class="fa fa-tv" ></i></span></a>
+					<a onclick="$(document).toggleFullScreen()" id="fullscreen" title="Toggle Fullscreen" class="cursor-pointer"><i class="icon ion-android-expand" ></i></a>
 				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -37,8 +37,8 @@
 						<span class="small ml-1 d-md-down-none"><?=ucfirst($user->first_name .' '.$user->last_name);?></span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right">
-						<a href="<?=site_url('profile');?>" class="dropdown-item"><i class="fa fa-user-circle"></i> Profile</a>
-						<a href="<?=site_url('logout');?>" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
+						<a href="<?=site_url('profile');?>" class="dropdown-item"><i class="icon ion-user-circle"></i> Profile</a>
+						<a href="<?=site_url('logout');?>" class="dropdown-item"><i class="icon ion-power-off"></i> Logout</a>
 					</div>
 				</li>
 			</ul>
@@ -62,7 +62,7 @@
 					<ul class="nav">
 						<li class="nav-title mt-2">Menu Navigasi</li>
 						<li class="nav-item">
-							<a href="<?=site_url('dashboard');?>" class="nav-link nav-dropdown-toggle"><i class="fa fa-home"></i> Dashboard <i class="fa fa-caret-right"></i></a>
+							<a href="<?=site_url('dashboard');?>" class="nav-link"><i class="icon ion-home"></i> Dashboard</a>
 						</li>
 						
 						<?php 
@@ -72,17 +72,18 @@
 						?>
 
 						<li class="nav-item nav-dropdown">
-							<a href="#" class="nav-link nav-dropdown-toggle"><i class="fa fa-cogs"></i> Pengaturan <i class="fa fa-caret-right"></i></a>
+							<a href="#" class="nav-link nav-dropdown-toggle"><i class="icon ion-ios-gear"></i> Pengaturan <i class="icon ion-ios-arrow-down"></i></a>
 							<ul class="nav-dropdown-items">
-								<li class="nav-item"><a href="<?=site_url('users');?>" class="nav-link"><i class="fa fa-arrow-right"></i> Pengguna</a></li>
-								<li class="nav-item"><a href="<?=site_url('options');?>" class="nav-link"><i class="fa fa-arrow-right"></i> Pengaturan Umum</a></li>
-								<li class="nav-item"><a href="<?=site_url('backup');?>" class="nav-link"><i class="fa fa-arrow-right"></i> Backup Restore Data</a></li>
+								<li class="nav-item"><a href="<?=site_url('users');?>" class="nav-link"><i class="icon ion-ios-arrow-thin-right"></i> Pengguna</a></li>
+								<li class="nav-item"><a href="<?=site_url('options');?>" class="nav-link"><i class="icon ion-ios-arrow-thin-right"></i> Pengaturan Umum</a></li>
+								<li class="nav-item"><a href="<?=site_url('backup');?>" class="nav-link"><i class="icon ion-ios-arrow-thin-right"></i> Backup Restore Data</a></li>
 							</ul>
 						</li>
 						
-						<li class="nav-title mt-4">Bantuan</li>
-						<li class="nav-item"><a href="#" class="nav-link sorry"><i class="fa fa-life-ring"></i> Panduan Penggunaan</a></li>
-						<li class="nav-item"><a href="#" class="nav-link sorry"><i class="fa fa-paper-plane"></i> Hubungi Pengembang</a></li>
+						<li class="nav-title mt-4">Informasi</li>
+						<li class="nav-item"><a href="#" class="nav-link sorry"><i class="icon ion-help-circled"></i> Informasi Aplikasi</a></li>
+						<li class="nav-item"><a href="#" class="nav-link sorry"><i class="icon ion-ios-book"></i> Panduan Penggunaan</a></li>
+						<li class="nav-item"><a href="#" class="nav-link sorry"><i class="icon ion-email"></i> Hubungi Pengembang</a></li>
 					</ul>
 				</nav>
 			</div>

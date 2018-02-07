@@ -9875,14 +9875,13 @@ a.text-dark:hover {
 .sidebar .nav-link {
   display: block;
   text-decoration: none;
-  padding: 10px 22px;
+  padding: 10px 22px 5px;
   color: #9d9d9d;
 }
 
 .sidebar .nav-link i:first-of-type {
   display: inline-block;
   width: 24px;
-  margin-right: 4px;
   color: #c4c3c3;
   font-size: 14px;
 }

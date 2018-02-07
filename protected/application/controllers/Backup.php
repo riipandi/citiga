@@ -44,6 +44,7 @@ class Backup extends CI_Controller {
 		$this->data['title'] = 'Backup Data';
 		$this->data['user'] = $this->ion_auth->user()->row();
 		$this->data['backup_path'] = $this->backup_path;
+		$this->output->set_title($this->data['title']);
 		$this->load->view('default/backupdb', $this->data);
     }
     
