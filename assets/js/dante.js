@@ -1,41 +1,21 @@
-/*
-toastr.options = {
-    "closeButton": false,
-    "debug": false,
-    "newestOnTop": false,
-    "progressBar": false,
-    "positionClass": "toast-top-right",
-    "preventDuplicates": false,
-    "onclick": null,
-    "showDuration": "300",
-    "hideDuration": "1000",
-    "timeOut": "5000",
-    "extendedTimeOut": "1000",
-    "showEasing": "swing",
-    "hideEasing": "linear",
-    "showMethod": "fadeIn",
-    "hideMethod": "fadeOut"
-}
-*/
-
-$(function() {
-    $(document).bind("fullscreenchange", function(e) {
+$(function () {
+    $(document).bind("fullscreenchange", function (e) {
         console.log('Full screen changed');
-        $("#fullscreen").attr('title',$(document).fullScreen() ? "Exit Fullscreen" : "Toggle Fullscreen");
+        $("#fullscreen").attr('title', $(document).fullScreen() ? "Exit Fullscreen" : "Toggle Fullscreen");
     });
-    $(document).bind("fullscreenerror", function(e) {
-       console.log("Full screen error.");
-       toastr.warning("Browser won't enter full screen mode for some reason.");
+    $(document).bind("fullscreenerror", function (e) {
+        console.log("Full screen error.");
+        toastr.warning("Browser won't enter full screen mode for some reason.");
     });
 });
 
 $(document).ready(function () {
 
     // Fitur Belum Tersedia
-    $(".sorry").click(function(){
+    $(".sorry").click(function () {
         toastr['warning']('Sayangnya fitur ini belum tersedia!');
     });
-    
+
     /**
      * Sidebar Dropdown
      */
@@ -63,7 +43,7 @@ $(document).ready(function () {
     });
 
     // Return the url with modal
-    $('#confirm-get').on('show.bs.modal', function(e) {
+    $('#confirm-get').on('show.bs.modal', function (e) {
         $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
     });
 
@@ -83,8 +63,8 @@ $(document).ready(function () {
     // Ajax Login
     $("#login-form").validate({
         rules: {
-            password: {required: true},
-            identity: {required: true, email: false},
+            password: { required: true },
+            identity: { required: true, email: false },
         },
         messages: {
             password: 'Masukan Password Anda',
@@ -97,13 +77,14 @@ $(document).ready(function () {
         submitHandler: validateLogin
     });
 
+    // Ajax Login
     function validateLogin() {
         var data = $('#login-form').serialize();
         $.ajax({
             type: 'POST',
             url: login_url,
             data: data,
-            beforeSend: function () {$('#login-button').val('Memvalidasi ...');},
+            beforeSend: function () { $('#login-button').val('Memvalidasi ...'); },
             success: function (response) {
                 if (response == "ok") {
                     var return_url = $('#return_url').val();
@@ -123,7 +104,6 @@ $(document).ready(function () {
     }
 
     // Ajax Lostpass
-    // Ajax Login
     $("#lostpass-form").validate({
         rules: { identity: { required: true, email: false }, },
         messages: { identity: 'Masukan Username Anda', },
@@ -153,7 +133,7 @@ $(document).ready(function () {
         });
         return false;
     }
-    
+
     /* DataTable
     $('#table-data').DataTable({
         lengthMenu: [[10, 50, 100, 500], [10, 50, 100, 500]],

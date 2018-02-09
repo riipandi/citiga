@@ -1,4 +1,4 @@
-Options +Indexes +ExecCGI +FollowSymLinks
+Options -Indexes +ExecCGI +FollowSymLinks
 DirectoryIndex index.php index.html default.html
 
 <IfModule rewrite_module>
