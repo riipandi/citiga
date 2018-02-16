@@ -93,7 +93,7 @@ Please see the `license file`.
 - Community Slack Channel <https://codeigniterchat.slack.com>
 
 Report security issues to our Security Panel <mailto:security@codeigniter.com>
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
+or via our page on HackerOne <https://hackerone.com/codeigniter>, thank you.
 
 ## Acknowledgement
 
