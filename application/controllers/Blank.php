@@ -13,8 +13,7 @@ class Blank extends CI_Controller {
 	{
 		// Session check
 		if (!$this->ion_auth->logged_in()) {
-			$this->session->set_flashdata('message', 'You must login first to access this page!');
-			redirect('login?return_url='.urlencode('options'), 'refresh');
+			redirect_flash(return_login('options'), 'message', 'You must login to access this page!');
 		} // End session check
 
 		$this->output->set_template('default');

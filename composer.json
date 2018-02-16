@@ -1,28 +1,36 @@
 {
-    "description": "Codeigniter3",
-    "name": "riipandi/Codeigniter3",
-    "type": "project",
-    "homepage": "https://aris.web.id",
-    "license": "MIT",
+    "description": "Codeigniter3 Starter Pack. Already built in authentication system and oAuth",
+    "name"       : "riipandi/codeigniter3-starterpack",
+    "type"       : "project",
+    "homepage"   : "https://aris.web.id",
+    "license"    : "MIT",
     "config": {
-        "vendor-dir": "protected/vendor/"
+        "vendor-dir": "vendor/"
     },
     "require": {
-        "php"                   : ">=5.6",
-        "codeigniter/framework" : "~3.1",
-        "byrokrat/checkdigit"   : "^1.1",
-        "crazycodr/roman"       : "^1.0",
-        "ramsey/uuid"           : "^3.3",
-        "box/spout"             : "^2.7",
-        "studio-42/elfinder"    : "^2.1",
+        "php"                          : ">=7.0",
+        "codeigniter/framework"        : "~3.1",
+        "byrokrat/checkdigit"          : "^1.1",
+        "crazycodr/roman"              : "^1.0",
+        "ramsey/uuid"                  : "^3.3",
+        "box/spout"                    : "^2.7",
+        "studio-42/elfinder"           : "^2.1",
         "albertcht/invisible-recaptcha": "^1.8",
-        "delight-im/ids": "^1.0",
-        "delight-im/auth": "^7.2"
-    },
-    "suggest": {
-        "paragonie/random_compat": "Provides better randomness in PHP 5.x"
+        "delight-im/privacy-policy"    : "^1.0",
+        "delight-im/auth"              : "^7.2",
+        "delight-im/ids"               : "^1.0",
+        "monolog/monolog"              : "^1.23",
+        "pragmarx/google2fa"           : "^2.0",
+        "fzaninotto/faker"             : "^1.7",
+        "lcobucci/jwt"                 : "^3.2",
+        "guzzlehttp/guzzle"            : "^6.3",
+        "paragonie/random_compat"      : "^2.0",
+        "league/oauth2-client"         : "^2.3",
+        "jolicode/jolinotif": "^1.3",
+        "matthiasmullie/minify": "^1.3",
+        "mike42/escpos-php": "^1.6"
     },
     "require-dev": {
-        "mikey179/vfsStream": "1.1.*"
+        "mikey179/vfsStream": "1.6.*"
     }
 }

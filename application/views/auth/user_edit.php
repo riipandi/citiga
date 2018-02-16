@@ -1,106 +1,48 @@
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-8">
-            <?php echo form_open(uri_string());?>
-            <?php //echo form_open('user/edit/'.$user->id, 'class="form-horizontal" id="form"');?>
-            <?php echo form_hidden('id', $user->id); echo form_hidden($csrf); ?>
+            <div class="col-md-8">
+            <?php echo form_open(uri_string(), 'class="form-horizontal" id="form"');?>
+            <?=form_hidden('id', $user->getUsername())?>
 			<div class="card">
 				<div class="card-header bg-light"><?=$title?></div>
 				<div class="card-body">
                               <div class="row">
-                                    <div class="col-md-6">
-                                    <div class="form-group">
+                                    <div class="col-md-6 form-group">
                                           <label>First Name</label>
-                                          <?=form_input($first_name,'','class="form-control" placeholder="Nama Depan" required');?>
+                                          <?=form_input('firstname',$firstname,'class="form-control" placeholder="Nama Depan" required');?>
                                     </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                    <div class="form-group">
+                                    <div class="col-md-6 form-group">
                                           <label>Last Name</label>
-                                          <?=form_input($last_name,'','class="form-control" placeholder="Nama Belakang" required');?>
-                                    </div>
+                                          <?=form_input('lastname',$lastname,'class="form-control" placeholder="Nama Belakang" required');?>
                                     </div>
                               </div>
                               <div class="row mt-2">
-                                    <div class="col-md-6">
-                                    <div class="form-group">
+                                    <div class="col-md-6 form-group">
                                           <label>User Name</label>
-                                          <?=form_error('identity');?>
-                                          <?=form_input($identity,'','class="form-control" placeholder="Nama Pengguna" required');?>
+                                          <?=form_input('username',$username,'class="form-control" placeholder="Nama Pengguna" required');?>
                                     </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                    <div class="form-group">
-                                          <label>Phone Number</label>
-                                          <?=form_input($phone,'','class="form-control" placeholder="Nomor telepon" required');?>
-                                    </div>
+                                    <div class="col-md-6 form-group">
+                                          <label>Email Address</label>
+                                          <?=form_input('mailaddress',$mailaddress,'class="form-control" placeholder="Alamat Email" required');?>
                                     </div>
                               </div>
 
                               <div class="row mt-2">
-                                    <div class="col-md-6">
-                                          <div class="form-group">
-                                                <label>Email Address</label>
-                                                <?=form_input($email,'','class="form-control" placeholder="Alamat email" required');?>
-                                                <small class="form-text">Digunakan untuk mengirim password jika lupa.</small>
-                                          </div>
-                                    </div>
-                                    <div class="col-md-6 invisible">
-                                          <div class="form-group">
-                                                <label>Company Name</label>
-                                                <?=form_input($company,'','class="form-control" placeholder="Nama instansi"');?>
-                                                <small class="form-text">Optional, tidak wajib diisi.</small>
-                                          </div>
-                                    </div>
-                              </div>
-
-                              <div class="row mt-2">
-                                    <div class="col-md-6">
-                                    <div class="form-group">
+                                    <div class="col-md-6 form-group">
                                           <label>Password</label>
-                                          <?=form_password($password,'','class="form-control" placeholder="Kata sandi"');?>
+                                          <?=form_password('password1','','class="form-control" placeholder="Kata sandi"');?>
                                           <small class="form-text">Kosongkan jika tidak ingin mengubah kata sandi.</small>
                                     </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                    <div class="form-group">
+                                    <div class="col-md-6 form-group">
                                           <label>Confirm Password</label>
-                                          <?=form_password($password_confirm,'','class="form-control" placeholder="Konfirmasi kata sandi"');?>
-                                    </div>
-                                    </div>
-                              </div>
-                              
-                              <?php if (($this->ion_auth->is_admin())): ?>
-                              <div class="row mt-2">
-                                    <div class="col-md-12">
-                                    <div class="form-group">
-                                          <label>Member of groups</label>
-                                          <?php foreach ($groups as $group):?>
-                                                <label class="checkbox form-control">
-                                                <?php
-                                                      $gID=$group['id']; $checked=null; $item=null;
-                                                      foreach($currentGroups as $grp) {
-                                                            if ($gID == $grp->id) {$checked= ' checked="checked"'; break;}
-                                                      }
-                                                      $disabled = (($user->id == 1) && ($gID == 1)) ? ' disabled' : '';
-                                                ?>
-                                                <input type="checkbox" name="groups[]" value="<?$group['id'];?>"<?php echo $checked.$disabled;?>>
-                                                <?=htmlspecialchars(ucfirst($group['name']),ENT_QUOTES,'UTF-8');?> &nbsp;&ndash;&nbsp;
-                                                <?=htmlspecialchars(ucfirst($group['description']),ENT_QUOTES,'UTF-8');?>
-                                                </label>
-                                          <?php endforeach?>
-                                    </div>
+                                          <?=form_password('password2','','class="form-control" placeholder="Konfirmasi kata sandi"');?>
                                     </div>
                               </div>
-                              <?php endif ?>
                         </div>
                         <div class="card-footer bg-light">
-                              <a href="<?=$this->agent->referrer()?>" class="btn btn-danger"><i class="fa fa-arrow-left"></i> &nbsp; Kembali</a>
+                              <a href="<?=$this->agent->referrer()?>" class="btn btn-danger"><i class="icon ion-arrow-left"></i> &nbsp; Kembali</a>
                               <button type="submit" id="btnSave" class="btn btn-primary float-right">
-                                    <i class="fa fa-save"></i> &nbsp; Simpan
+                                    <i class="icon ion-save"></i> &nbsp; Simpan
                               </button>
                         </div>
                   </div>

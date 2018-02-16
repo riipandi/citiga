@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><?=APP_NAME." :: ".$title;?></title>
 	<meta name="resource-type" content="document">
 	<meta name="robots" content="all, noindex, nofollow">
@@ -14,7 +14,7 @@
 		foreach($css as $file) { echo "\n\t\t<link href='$file' rel='stylesheet' type='text/css'>"; }
 	?>
 	<link rel="icon" type="image/png" href="<?=site_url('assets/img/'.SESSNAME.'.png');?>">
-	<link rel="stylesheet" href="<?=site_url('assets/css/ionicons.min.css');?>">
+    <link rel="stylesheet" href="<?=site_url('assets/css/fontface.css');?>">
 	<link rel="stylesheet" href="<?=site_url('assets/css/toastr.min.css');?>">
     <link rel="stylesheet" href="<?=site_url('assets/css/styles.css');?>">
 </head>
@@ -34,11 +34,11 @@
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<img src="<?=site_url('assets/img/avatar-1.png');?>" class="avatar avatar-xs" alt="avatar">
-						<span class="small ml-1 d-md-down-none"><?=ucfirst($user->first_name .' '.$user->last_name);?></span>
+						<span class="small ml-1 d-md-down-none"><?=ucfirst($user->getUsername());?></span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right">
 						<a href="<?=site_url('profile');?>" class="dropdown-item"><i class="icon ion-user-circle"></i> Profile</a>
-						<a href="<?=site_url('logout');?>" class="dropdown-item"><i class="icon ion-power-off"></i> Logout</a>
+						<a href="<?=site_url('signout');?>" class="dropdown-item"><i class="icon ion-power-off"></i> Logout</a>
 					</div>
 				</li>
 			</ul>

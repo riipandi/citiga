@@ -4,7 +4,6 @@ $system_path        = 'vendor/codeigniter/framework/system';
 $application_folder = 'application';
 $view_folder        = 'application/views';
 
-@ini_set('display_errors', 0);
 if(!file_exists(dirname(__FILE__).'/vendor')) {
     die('Please install with the `composer update` first!');
 } else {
@@ -17,5 +16,13 @@ if(!file_exists(dirname(__FILE__).'/vendor')) {
             die('Please check your database connection parameter!');
         }
     }
-    require_once $application_folder.'/system.php';
+    $backup_dir = FILE_PATH.'backup';
+    $upload_dir = FILE_PATH.'upload';
+    if ( (!is_dir($backup_dir)) || (!is_dir($upload_dir)) ) { 
+        mkdir($backup_dir, 0777, TRUE);
+        mkdir($upload_dir, 0777, TRUE);
+    }
+    //if (is_writable($backup_dir)) { echo 'Backup directory not writeable!'; }
+    //if (is_writable($upload_dir)) { echo 'Upload directory not writeable!'; }
+    require_once $application_folder.'/bootstrap.php';
 }

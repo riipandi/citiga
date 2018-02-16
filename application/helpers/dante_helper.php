@@ -1,5 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
+use MatthiasMullie\Minify;
+
 if(! function_exists('dante_helper'))
 {
     function json_output($statusHeader,$response)
@@ -10,6 +12,34 @@ if(! function_exists('dante_helper'))
 		$ci->output->set_output(json_encode($response));
     }
 
+    function redirect_flash($uri, $item, $value)
+	{
+		$ci =& get_instance();
+		$ci->session->set_flashdata($item, $value);
+		redirect($uri, 'refresh');
+    }
+
+    function return_login($url = NULL) 
+    {
+        $url = (!empty($url) ? $url : '');
+        return 'signin?return_url='.urlencode($url);
+    }
+
+	function minify_css_file($file = NULL) 
+	{
+        if (empty($file)) {
+    		return new Minify\CSS($file);
+        }
+	}
+
+    function is_email($email = NULL) 
+    {
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
     function tanggal_indo($tanggal, $cetak_hari = false)
     {
         $hari = array ( 1 =>    'Senin',

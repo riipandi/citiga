@@ -15,7 +15,7 @@ please visit <https://codeigniter.com/download>. This repo contain:
 
 ```
  - CodeIgniter3
- - Carbon Admin
+ - Asura Admin
  - Font Awesome 5
  - Bootstrap 3
  - Bootstrap Datepicker
@@ -86,13 +86,13 @@ Please see the `license file`.
 
 ## Resources
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
+- User Guide <https://codeigniter.com/docs>
+- Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>
+- Community Forums <http://forum.codeigniter.com/>
+- Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>
+- Community Slack Channel <https://codeigniterchat.slack.com>
 
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
+Report security issues to our Security Panel <mailto:security@codeigniter.com>
 or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
 
 ## Acknowledgement

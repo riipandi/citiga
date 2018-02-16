@@ -1,9 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-use Box\Spout\Reader\ReaderFactory;
-use Box\Spout\Writer\WriterFactory;
-use Box\Spout\Common\Type;
-
 class Backup extends CI_Controller {
 
 	private $backup_path = FILE_PATH.'backup'.DIRECTORY_SEPARATOR;
@@ -11,22 +7,20 @@ class Backup extends CI_Controller {
 	function __construct() 
 	{
 		parent::__construct();
-		$this->load->library(['ion_auth']);
-		$this->load->helper(['download', 'directory', 'dante']);
+		$this->load->library(['session']);
+		$this->load->helper(['download', 'directory', 'globals', 'dante']);
 		$this->load->dbutil();
 		$this->_init();
     }
     
 	private function _init()
 	{
-		// Session check
-		if (!$this->ion_auth->logged_in()) {
-			$this->session->set_flashdata('message', 'You must login first to access this page!');
-			redirect('login?return_url='.urlencode('backup'), 'refresh');
-		} else if (!$this->ion_auth->is_admin()) {
-			$this->session->set_flashdata('message', 'You must be an administrator to view that page');
-			redirect($this->agent->referrer(), 'refresh');
-		} // End session check
+		// sessionCheck
+		if (!Globals::_auth()->isLoggedIn()) {
+			redirect_flash(return_login('backup'), 'message', 'You must login to access this page!');
+		}/* elseif (!Globals::_auth()->hasRole(\Delight\Auth\Role::SUPER_ADMIN)) {
+			redirect_flash($this->agent->referrer(), 'message', 'You must be an administrator to view that page!');
+		}*/ // sessionCheck
 
 		$this->output->set_template('default');
 		$this->load->js('assets/js/demo.js');
@@ -42,7 +36,7 @@ class Backup extends CI_Controller {
 		$files = directory_map($this->backup_path, 1);
 		$this->data['backup_files'] = $files;
 		$this->data['title'] = 'Backup Data';
-		$this->data['user'] = $this->ion_auth->user()->row();
+		$this->data['user'] = Globals::_auth();
 		$this->data['backup_path'] = $this->backup_path;
 		$this->output->set_title($this->data['title']);
 		$this->load->view('default/backupdb', $this->data);

@@ -9,8 +9,7 @@ composer.lock
 application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
-/vendor/
-
 /application/config.inc.php
-/files/temp/*
-/vendor/
+node_modules/
+vendor/
+files/

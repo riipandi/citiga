@@ -11,14 +11,12 @@ class Setting extends CI_Controller {
 
 	private function _init()
 	{
-		// Session check
-		if (!$this->ion_auth->logged_in()) {
-			$this->session->set_flashdata('message', 'You must login first to access this page!');
-			redirect('login?return_url='.urlencode('options'), 'refresh');
-		} else if (!$this->ion_auth->is_admin()) {
-			$this->session->set_flashdata('message', 'You must be an administrator to view that page');
-			redirect($this->agent->referrer(), 'refresh');
-		} // End session check
+		// sessionCheck
+		if (!Globals::_auth()->isLoggedIn()) {
+			redirect_flash(return_login('options'), 'message', 'You must login to access this page!');
+		} elseif (!Globals::_auth()->hasRole(\Delight\Auth\Role::SUPER_ADMIN)) {
+			redirect_flash($this->agent->referrer(), 'message', 'You must be an administrator to view that page!');
+		} // sessionCheck
 
 		$this->output->set_template('default');
 	}

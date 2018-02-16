@@ -40,7 +40,6 @@ $config['subclass_prefix']  = 'MY_';
 |--------------------------------------------------------------------------
 | Composer auto-loading
 |--------------------------------------------------------------------------
-|
 | For more information about Composer, please visit http://getcomposer.org/
 |
 | Note: This will NOT disable or override the CodeIgniter-specific
@@ -64,7 +63,6 @@ $config['directory_trigger']     = 'd';
 |--------------------------------------------------------------------------
 | Error Logging
 |--------------------------------------------------------------------------
-|
 |	0 = Disables logging, Error logging TURNED OFF
 |	1 = Error Messages (including PHP errors)
 |	2 = Debug Messages
@@ -91,10 +89,7 @@ $config['cache_path']           = TEMP_PATH;
 |--------------------------------------------------------------------------
 | Encryption Key
 |--------------------------------------------------------------------------
-|
 | If you use the Encryption class, you must set an encryption key.
-| See the user guide for more info.
-|
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
@@ -106,7 +101,7 @@ $config['encryption_key'] = '9dcfad793878046bcd6ae50c7e7ec0fb';
 | You can choose between database or files for session driver
 |--------------------------------------------------------------------------
 */
-$config['sess_driver']             = 'files';
+$config['sess_driver']             = 'database';
 $config['sess_expiration']         = 3600;
 $config['sess_time_to_update']     = 300;
 $config['sess_match_ip']           = TRUE;
@@ -114,10 +109,10 @@ $config['sess_regenerate_destroy'] = TRUE;
 
 if ($config['sess_driver'] == 'files') {
     $config['sess_save_path']      = TEMP_PATH;
-    $config['sess_cookie_name']    = SESSNAME.'_sess';
+    $config['sess_cookie_name']    = SESSNAME.'sess';
 } if ($config['sess_driver'] == 'database') {
-    $config['sess_cookie_name']    = 'cxsessions';
-    $config['sess_save_path']      = 'cxsessions';
+    $config['sess_cookie_name']    = 'users_sessions';
+    $config['sess_save_path']      = 'users_sessions';
 }
 
 /*
@@ -151,9 +146,9 @@ $config['cookie_httponly'] 	= FALSE;
 */
 $config['csrf_protection']   = TRUE;
 $config['csrf_regenerate']   = TRUE;
-$config['csrf_token_name']   = SESSNAME.'_csrf';
-$config['csrf_cookie_name']  = SESSNAME.'_kies';
-$config['csrf_expire']       = 7200;
+$config['csrf_token_name']   = SESSNAME.'csrf';
+$config['csrf_cookie_name']  = SESSNAME.'cookies';
+$config['csrf_expire']       = 3600;
 $config['csrf_exclude_uris'] = array();
 
 /*
@@ -187,6 +182,7 @@ $config['newline']   = "\r\n";
 $config['maintenance_mode']     = FALSE;
 $config['minify_output']        = FALSE;
 $config['use_recaptcha']        = FALSE;
+$config['enable_social_login']  = TRUE;
 
 /*
 |--------------------------------------------------------------------------

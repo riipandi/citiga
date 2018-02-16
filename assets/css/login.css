@@ -167,7 +167,7 @@ a { transition: background .3s; }
     position: absolute;
     top: -10px;
     left: 50%;
-    margin-left: -22px;
+    margin-left: -20%;
     padding: 0px 10px;
     background: #FFFFFF;
 	color: #8a8a8a;
@@ -177,26 +177,23 @@ a { transition: background .3s; }
 	padding: 0;
 }
 /* SOCIAL MEDIA LOGIN */
+.socmed-login {
+	text-align: center;
+	display: block;
+}
 .socmed-login .socmed-btn {
     padding: 10px 25px;
     color: #FFFFFF;
-    display: block;
+    display: inline-flex;
     margin-top: 5px;
 	text-align: left;
 	border-radius: 2px;
 }
 .socmed-login .socmed-btn i {
-	text-align: left;
-    border-right: 1px solid #FFFFFF;
-    margin-right: 15px;
-    width: 25px;
+	text-align: center;
+    width: 20px;
 	font-size: 16x;
 	vertical-align: middle;
-}
-.socmed-login .socmed-btn span {
-	display: inline-block;
-    margin-top: 8px;
-    line-height: 0;
 }
 .socmed-login .facebook-btn {
 	background: #3b5998;
@@ -210,11 +207,17 @@ a { transition: background .3s; }
 .socmed-login .google-btn:hover {
 	background: #d40909;
 }
-.socmed-login .yahoo-btn {
-	background: #940b94;
+.socmed-login .github-btn {
+	background: #767676;
 }
-.socmed-login .yahoo-btn:hover {
-	background: #790a79;
+.socmed-login .github-btn:hover {
+	background: #333;
+}
+.socmed-login .telegram-btn {
+	background: #0088cc;
+}
+.socmed-login .telegram-btn:hover {
+	background: #2A6EBB;
 }
 
 /* RESPONSIVE */
@@ -263,4 +266,12 @@ small.validation {
 	background: #333333 url('../img/dot.png');
 	opacity: .8;
 	filter: alpha(opacity=80);
+}
+
+.g-recaptcha {
+	border-radius: 4px;
+	border: 1px solid #d8d8d8;
+	overflow: hidden;
+	margin: 0 auto;
+	display: inline-block;
 }

@@ -12,7 +12,8 @@ class Testing extends CI_Controller {
 	function __construct() 
 	{
 		parent::__construct();
-		$this->load->library(array('ion_auth'));
+		$this->load->library(['session']);
+		$this->session->sess_destroy();
 		$this->_init();
 	}
 
@@ -21,15 +22,15 @@ class Testing extends CI_Controller {
 		$this->output->unset_template();
 	}
 	
-	private function gIDs()
+	private function _hashIDs()
 	{
 		return new \Delight\Ids\Id();
 	}
-
+	
 	public function index()
 	{
 		//echo TEMP_PATH;
-		echo $this->gIDs()->obfuscate(9456781);
+		echo $this->_hashIDs()->obfuscate(9456781);
 	}
 	
 	public function sendmail()
@@ -82,6 +83,45 @@ class Testing extends CI_Controller {
         $writer->close();
 	}
 
+	private function _auth()
+	{
+		$this->load->database();
+		$db_port = $this->db->port;
+		$db_host = $this->db->hostname;
+		$db_user = $this->db->username;
+		$db_pass = $this->db->password;
+		$db_name = $this->db->database;
+		$dsn = 'mysql:dbname='.$db_name.';host='.$db_host.';port='.$db_port.';charset=utf8mb4';
+		return new \Delight\Auth\Auth(new \Delight\Db\PdoDsn($dsn, $db_user, $db_pass));
+	}
+
+	public function create_user()
+	{
+		$uMail = 'admin@local.dev';
+		$uUser = 'admin';
+		$uPass = 'admin';
+
+		try {
+			$userId = $this->_auth()->register($uMail, $uPass, $uUser, function ($selector, $token) {
+				// send `$selector` and `$token` to the user (e.g. via email)
+			});
+			// we have signed up a new user with the ID `$userId`
+			echo 'User was created'; 
+		}
+		catch (\Delight\Auth\InvalidEmailException $e) {
+			echo 'invalid email address';
+		}
+		catch (\Delight\Auth\InvalidPasswordException $e) {
+			echo 'invalid password';
+		}
+		catch (\Delight\Auth\UserAlreadyExistsException $e) {
+			echo 'user: '.$uUser.' already exists with pass: ' . $uPass;
+		}
+		catch (\Delight\Auth\TooManyRequestsException $e) {
+			echo 'too many requests';
+		}
+	}
+	
 	public function excel_read()
 	{
 		try {
@@ -104,7 +144,6 @@ class Testing extends CI_Controller {
 			echo $e->getMessage();
 			exit;
 		}
-
 	}
 
 } // EndClass

@@ -1,3 +1,5 @@
+@import 'ionicons.min.css';
+
 /* cyrillic-ext */
 @font-face {
   font-family: 'Open Sans';
@@ -165,4 +167,36 @@
   font-weight: 700;
   src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzOgdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+.icon-18 {
+  font-size: 18px;
+}
+
+.icon-24 {
+  font-size: 24px;
+}
+
+.icon-36 {
+  font-size: 36px;
+}
+
+.icon-48 {
+  font-size: 48px;
+}
+
+.icon-dark {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.icon-dark.icon-inactive {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.icon-light {
+  color: rgba(255, 255, 255, 1);
+}
+
+.icon-light.icon-inactive {
+  color: rgba(255, 255, 255, 0.3);
 }

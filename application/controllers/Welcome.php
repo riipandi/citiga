@@ -5,7 +5,8 @@ class Welcome extends CI_Controller {
 	function __construct() 
 	{
 		parent::__construct();
-		$this->load->library(['ion_auth']);
+		$this->load->library(['session']);
+		$this->load->helper(['globals', 'dante']);
 		$this->_init();
 	}
 
@@ -31,28 +32,56 @@ class Welcome extends CI_Controller {
 		$this->output->set_template('default');
 		$this->load->js('assets/js/chart.min.js');
 	}
+
+	private function policy() 
+    {
+		$policy = new \Delight\PrivacyPolicy\Language\EnglishPrivacyPolicy();
+		$policy->setLastUpdated(1393372800);
+		$policy->setVersionName('v3.1.4');
+		$policy->setExpiration(1395792000);
+		$policy->setCanonicalUrl(site_url('privacy'));
+		$policy->setContactEmail('privacy@example.com');
+		$policy->setContactUrl(site_url('contact'));
+
+		$policy->setUserDataTraded(false);
+		$policy->setDataMinimizationGoal(true);
+		$policy->setChildrenMinimumAge(13);
+		$policy->setPromotionalEmailOptOut(true);
+		$policy->setFirstPartyCookies(true);
+		$policy->setThirdPartyCookies(true);
+		$policy->setAccountDeletable(false);
+		$policy->setPreservationInBackups(true);
+		$policy->setThirdPartyServiceProviders(true);
+		$policy->setTransferUponMergerOrAcquisition(true);
+		$policy->setTlsEverywhere(true);
+		$policy->setRightToInformation(true);
+		$policy->setNotificationPeriod(30);
+        return $policy;
+    }
 	
 	public function index()
 	{
-		if ($this->ion_auth->logged_in()) {
-			$this->session->set_flashdata('message', 'Welcome back, you have already logged in');
-			redirect('dashboard', 'refresh');
-		}
-		//$this->output->cache(3600);
+		$this->output->cache(3600);
 		$this->output->unset_template();
 		$this->load->view('default/welcome');
 	}
 	
+	public function privacy()
+	{
+		$this->output->cache(3600);
+		$this->output->unset_template();
+        echo $this->policy()->toHtml();
+	}
+
 	public function dashboard()
 	{
-		// Session check
-		if (!$this->ion_auth->logged_in()) {
-			$this->session->set_flashdata('message', 'You must login first to access this page!');
-			redirect('login?return_url='.urlencode('dashboard'), 'refresh');
-		} // End session check
+		// sessionCheck
+		if (!Globals::_auth()->isLoggedIn()) {
+			redirect_flash(return_login('dashboard'), 'message', 'You must login to access this page!');
+		} // sessionCheck
 		
 		$this->data['title'] = 'Dashboard';
-		$this->data['user'] = $this->ion_auth->user()->row();
+		$this->data['user'] = Globals::_auth();
 
 		// Count records
 		//$this->load->model('dante_model');
@@ -69,4 +98,12 @@ class Welcome extends CI_Controller {
 		$this->load->view($viewfile, $this->data);
 	}
 
+	public function robotxt()
+	{
+		$this->output->cache(3600);
+		$this->output->unset_template();
+		$this->output->set_content_type('text/plain');
+        echo "User-agent: *\nDisallow: /";
+	}
+	
 } // EndClass
