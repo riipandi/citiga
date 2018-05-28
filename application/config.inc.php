@@ -6,9 +6,9 @@
 */
 define('DB_PORT', '3306');
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'arci31');
+define('DB_NAME', 'citiga');
 define('DB_USER', 'root');
-define('DB_PASS', '123321');
+define('DB_PASS', '');
 
 define('TIMEZONE',  'Asia/Jakarta');
 
@@ -22,5 +22,5 @@ define('SMTP_PASS', '');
 define('SMTP_HOST', '');
 define('SMTP_PORT', '');
 
-define('RECAPTCHA_SITEKEY',   '6Lf07SQUAAAAAC54ghk7T6iUhj32SvcXvn3o-zPN');
-define('RECAPTCHA_SECRETKEY', '6Lf07SQUAAAAAAeI_lgN65QqkZU3rse2OvHpwlma');
+define('RECAPTCHA_SITEKEY',   'xxxxxxxxxxxxxxxxxxxx');
+define('RECAPTCHA_SECRETKEY', 'xxxxxxxxxxxxxxxxxxxx');
